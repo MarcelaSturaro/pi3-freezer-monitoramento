@@ -9,7 +9,7 @@ function App() {
   useEffect (() => {
     const fetchData = async () => {
       try {
-	const response = await axios.get('http://localhost:3001/api/temperatura');
+	const response = await axios.get('https://pi3-freezer-monitoramento.onrender.com/api/temperatura');
 	setDados(response.data);
       } catch (error) {
 	console.error('Erro ao buscar dados: ', error);
