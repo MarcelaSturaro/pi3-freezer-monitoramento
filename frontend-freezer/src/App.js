@@ -22,12 +22,12 @@ function App() {
 
 
   const chartData = {
-    labels: dados.map(d => new Date(d._time).toLocaleTimeString([], {hour: '2-digit", minute: '2-digit'})),
+    labels: dados.map(d => new Date(d._time).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})),
     datasets: [{
 	label: "Temperatura do Freezer (°C)",
 	data: dados.map(d => d._value),
-, 	borderColor: 'rgb(75, 192, 192)',
-        backgroudColor: 'r, gba(75, 192, 192, 0.2)',
+ 	borderColor: 'rgb(75, 192, 192)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
 	fill: true,
       }],
     };
@@ -38,17 +38,17 @@ function App() {
       plugins: {
 	tooltip: {enabled: true},
 	legend: {position:'top'},
-      }
+      },
       scales: {
-	y: {title: {display: true, text: 'Temperatura (°C)'}, beginAtZero: false}
+	y: {title: {display: true, text: 'Temperatura (°C)'}, beginAtZero: false},
 	x: {title: {display: true, text: 'Horário'}, ticks: {autoSkip: true, maxTicksLimit:10} },
       },
     };
 
     return(
-      <div style={{maxWidth: '1000px', margin: '0 auto' padding: '20px', fontFamily: 'Sego e UI, Arial' }}>
-	<h1> style={{textAlign: 'center', color: '#2c3e50'}}> Monitoramento de Freezer - Mercado Mamma Mia</h1>
-	<div style={{background: 'white', borderRadius: '12px', padding: '20px', boxShadow: '0 2px 10px rgba(0, 0, 0, 0, 0.1)', height: '450px' }}>
+      <div style={{maxWidth: '1000px', margin: '0 auto', padding: '20px', fontFamily: 'Sego e UI, Arial' }}>
+	<h1 style={{textAlign: 'center', color: '#2c3e50'}}> Monitoramento de Freezer - Mercado Mamma Mia</h1>
+	<div style={{background: 'white', borderRadius: '12px', padding: '20px', boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)', height: '450px' }}>
 	  <Line data={chartData} options={options} />
 	</div>
 	<div vw="true" className="enabled">
