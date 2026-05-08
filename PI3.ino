@@ -5,7 +5,7 @@
 * - Marcela Rodrigues Siqueira Sturaro (2004774)
 * - Luiz Fernando Couto Correa
 * - Marcel Gomes
-*
+*6
 * Data: 12/04/2026.
 */
 
@@ -17,7 +17,7 @@
 #include "config.h"
 
 //Sensor DS18B20 no pino 4
-#define ONE_WIRE_BUS 4
+#define ONE_WIRE_BUS 17
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
